@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import validate from './validateInfo';
 import useForm from './useForm';
+import { Link, Outlet } from "react-router-dom"
 import './Form.css';
 
 const FormSignup = ({ submitForm }) => {
@@ -59,13 +60,23 @@ const FormSignup = ({ submitForm }) => {
             value={values.password2}
             onChange={handleChange}
           />
+          +
           {errors.password2 && <p>{errors.password2}</p>}
+        </div>
+        <div >
+        <label style={{color:"white"}}>Select Role    </label>
+        <select onChange={handleChange}>
+        <option value="user">User</option>
+        <option value="researcher">Reseacher</option>
+        <option value="collaborator">Collaborator</option>
+        <option value="admin">Admin</option>
+        </select>
         </div>
         <button className='form-input-btn' type='submit'>
           Sign up
         </button>
         <span className='form-input-login'>
-          Already have an account? Login <a href='#'>here</a>
+          Already have an account? Login <a href='/'>here</a>
         </span>
       </form>
     </div>

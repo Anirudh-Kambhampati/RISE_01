@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Form.css';
 import FormSignup from './FormSignup';
 import FormSuccess from './FormSuccess';
-
+import Sidebar from '../components/Sidebar';
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -19,7 +19,7 @@ const Form = () => {
         {!isSubmitted ? (
           <FormSignup submitForm={submitForm} />
         ) : (
-          <FormSuccess />
+          <Sidebar />
         )}
       </div>
     </>
